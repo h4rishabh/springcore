@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    ">
+	<!-- TYPE - 1 to put dependency -->
+	<bean class="com.springcore.Student" name="student1">
+		<property name="studentId">
+			<value>124</value>
+		</property>
+		<property name="studentName">
+			<value>Hrishabh</value>
+		</property>
+		<property name="studentAge">
+			<value>11</value>
+		</property>
+		<property name="studentAddress">
+			<value>Muzaffarpur</value>
+		</property>
+	</bean>
+
+	<!-- TYPE - 2 to put dependency -->
+ 
+ 	<bean class="com.springcore.Student" name="student2">
+		<property name="studentId" value="125"/>
+		<property name="studentName" value="Ashish"/>
+		<property name="studentAge" value="11"/>
+		<property name="studentAddress" value="Kolkata"/>
+	</bean>
+ 
+ 	<!-- TYPE - 3 to put dependency -->
+	<!--  To use p: tag, please ensure that we must include	
+	xmlns:p="http://www.springframework.org/schema/p" inside <beans> tag at the top-->
+	
+	<bean class="com.springcore.Student" name="student3"
+		p:studentId="201" p:studentName="Bajaj" p:studentAge="15"
+		p:studentAddress="Patna" />
+ 
+</beans>

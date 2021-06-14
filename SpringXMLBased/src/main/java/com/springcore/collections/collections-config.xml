@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    ">
+	
+	<bean name="emp1" class="com.springcore.collections.Emp" >
+		<property name="name" value="Tom"/>
+		<property name="phones">
+			<list>
+				<value>123456789</value>
+				<value>987644321</value>
+				<value>987412365</value>
+				<null/>
+			</list>
+		</property>
+		
+		<!--
+			1. if there is only one value in the list then we can simply write 
+			property with the only one value inside value tag
+		
+			<property name="phones">
+					<value>123456789</value>
+			</property> 
+			
+			2. if we want to keep set empty then 
+			
+			<property name="phones">
+				<list>
+				</list>
+			</property>
+			
+		-->
+		<property name="addresses">
+			<set>
+				<value>Delhi</value>
+				<value>Kolkata</value>
+				<value>Mumbai</value>	
+			</set>
+		</property>
+		<property name="courses">
+			<map>
+				<entry key="Java" value="3 Months"/>
+				<entry key="Python" value="2 Months"/>
+				<entry key="JavaScript" value="1.5 Months"/>				
+			</map>					
+		</property>
+		<property name="props">
+			<props>
+			
+			</props>
+		</property>
+	</bean>
+	
+</beans>
